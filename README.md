@@ -34,7 +34,7 @@ To run this application, you need to set up a Firebase account and obtain the `a
 - Go to the [Firebase Console](https://console.firebase.google.com/).
 - Click on "Add project" and follow the on-screen instructions to create a new Firebase project.
 
-3. **Add Firebase to Your Application:**
+2. **Add Firebase to Your Application:**
 - In the Firebase project dashboard, click on the gear icon next to "Project Overview" and select "Project settings".
 - Navigate to the "Service accounts" tab.
 - Click on "Generate new private key" under the "Firebase Admin SDK" section.
