@@ -47,6 +47,10 @@ dependencies {
     runtimeOnly 'org.bouncycastle:bcprov-jdk18on:1.76'
 
     implementation ('com.google.firebase:firebase-admin:9.4.1')
+    // .env file
+    implementation 'me.paulschwarz:spring-boot-dotenv:4.0.0'
+
+
 //    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
 //    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${coroutinesVersion}")
 //	runtimeOnly 'io.micrometer:micrometer-registry-datadog'

@@ -45,6 +45,9 @@ To run this application, you need to set up a Firebase account and obtain the `a
 - Create a folder named `cert` inside the `resources` folder of your project.
 - Move the `adminSdk.json` file into the `cert` folder.
 
+4. **Add .env file based on env-sample**
+
+
 ## Documentation
 
 The project is organized into several core modules:
