@@ -48,14 +48,18 @@ dependencies {
 
     implementation ('com.google.firebase:firebase-admin:9.4.1')
     // .env file
-    implementation 'me.paulschwarz:spring-boot-dotenv:4.0.0'
+    implementation 'me.paulschwarz:spring-dotenv:4.0.0'
 
 
 //    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}")
 //    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:${coroutinesVersion}")
-//	runtimeOnly 'io.micrometer:micrometer-registry-datadog'
     runtimeOnly 'org.springframework.modulith:spring-modulith-actuator'
     runtimeOnly 'org.springframework.modulith:spring-modulith-observability'
+
+//	runtimeOnly 'io.micrometer:micrometer-registry-datadog'
+    implementation ('io.micrometer:micrometer-bom:1.14.6')
+    implementation ("io.micrometer:micrometer-registry-datadog")
+//    implementation 'com.datadoghq:java-dogstatsd-client:2.10.0'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 //    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit5'
