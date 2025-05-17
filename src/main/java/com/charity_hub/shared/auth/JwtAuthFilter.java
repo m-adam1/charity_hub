@@ -40,6 +40,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             String token = resolveTokenFromAuthHeader(request);
 
             if (token == null) {
+                log.warn("No token found in request");
                 filterChain.doFilter(request, response);
                 return;
             }
@@ -50,7 +51,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             var payload = AccessTokenPayload.fromPayload(claims);
             var authentication = new UsernamePasswordAuthenticationToken(
                 payload,
-                null,
+                token,
                 payload.getPermissions().stream()
                     .map(SimpleGrantedAuthority::new)
                     .collect(Collectors.toList())
@@ -58,6 +59,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(authentication);
+            
+            request.setAttribute("Authorization", "Bearer " + token);
             
             filterChain.doFilter(request, response);
 
